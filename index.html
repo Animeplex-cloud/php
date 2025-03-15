@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Architecture Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            padding: 20px;
+            border: 1px solid #ddd;
+            display: inline-block;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Your Device Architecture</h2>
+        <p id="architecture">Detecting...</p>
+    </div>
+    
+    <script>
+        function detectArchitecture() {
+            let architecture = navigator.userAgentData ? navigator.userAgentData.platform : navigator.platform;
+            document.getElementById("architecture").innerText = architecture;
+        }
+        
+        detectArchitecture();
+    </script>
+</body>
+</html>
